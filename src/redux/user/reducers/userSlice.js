@@ -1,6 +1,6 @@
 // src/reducers/userSlice.js
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { loginUser, registerUser } from '../../services/auth/auth';
+import { loginUser, registerUser } from '../../../services/auth/auth';
 
 // Crear una acción asíncrona
 const loginUserActn = createAsyncThunk(

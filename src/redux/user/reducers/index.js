@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { loginUserActn, registerUserActn } from "./userSlice";
-import { fulfilledRegister, fullfilledLogin, pendingLogin, pendingRegister, rejectedLogin, rejectedRegister } from "./builders";
+import { fulfilledRegister, fullfilledLogin, pendingLogin, pendingRegister, rejectedLogin, rejectedRegister } from "../builders";
 
 const userSlice = createSlice({
     name: 'user',

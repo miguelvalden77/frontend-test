@@ -1,11 +1,11 @@
 import { useDispatch } from "react-redux"
-import { useForm } from "../../hooks/auth/useFormData"
-import { registerUserActn } from "../../redux/reducers/userSlice"
+import { useFormData } from "../../hooks/auth/useFormData"
+import { registerUserActn } from "../../redux/user/reducers/userSlice"
 
 
 export const Register = () => {
 
-    const { data, handleData, resetForm } = useForm({ email: "", password: "", username: "" })
+    const { data, handleData, resetForm } = useFormData({ email: "", password: "", username: "" })
     const dispatch = useDispatch()
 
 
