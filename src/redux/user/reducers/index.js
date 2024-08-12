@@ -5,7 +5,11 @@ import { fulfilledRegister, fullfilledLogin, pendingLogin, pendingRegister, reje
 const userSlice = createSlice({
     name: 'user',
     initialState: {
-        user: null,
+        user: {
+            id: null,
+            username: null,
+            email: null
+        },
         loading: false,
         error: null,
     },

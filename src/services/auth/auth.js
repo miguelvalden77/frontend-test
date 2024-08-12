@@ -9,9 +9,9 @@ const loginUser = async (dataForm) => {
             headers: { "Content-type": "application/json" }
         })
     const { email } = dataForm
-    const { authToken, username } = await result.json()
+    const { authToken, username, id } = await result.json()
     console.log({ authToken, email, username })
-    return { authToken, email, username }
+    return { authToken, email, username, id }
 }
 
 const registerUser = async (dataForm) => {

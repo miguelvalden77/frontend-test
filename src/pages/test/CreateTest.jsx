@@ -3,6 +3,7 @@ import { NavTestForm } from "../../components/create-test/NavTestForm"
 import { ProjectForm } from "../../components/create-test/ProjectForm/ProjectForm"
 import { PublishTest } from "../../components/create-test/Publicar/PublishTest"
 import { CuestionesForm } from "../../components/create-test/CuestionesForm/CuestionesForm"
+import { CuestionesAside } from "../../components/create-test/CuestionesAside"
 
 export const CreateTest = () => {
 
@@ -13,7 +14,7 @@ export const CreateTest = () => {
         const outsideClick = (evt) => {
             if (createTestPage.current && !createTestPage.current.contains(evt.target)) {
 
-                alert("Has hecho click fuera del formulario de creación de test")
+                console.log("click fuera")
             }
         }
 

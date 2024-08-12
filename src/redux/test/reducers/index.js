@@ -1,12 +1,22 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { updateCreateTest } from "./testSlice";
-import { updateCreateTestAct } from "../builders";
+import { updateCreateTest, updateCurrentPreguntas, updateCurrentTest } from "./testSlice";
+import { updateCreateTestAct, updateTestAct, updateTestPreguntas } from "../builders";
 
 const testSlice = createSlice({
     name: 'test',
     initialState: {
-        currentTest: null,
-        createTest: null,
+        currentTest: {
+            titulo: "",
+            descripcion: "",
+            categoria: "",
+            preguntas: []
+        },
+        createTest: {
+            titulo: "",
+            descripcion: "",
+            categoria: "",
+            preguntas: []
+        },
         loading: false,
         error: null,
     },
@@ -15,7 +25,9 @@ const testSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder
-            .addCase(updateCreateTest.fulfilled, updateCreateTestAct);
+            .addCase(updateCreateTest.fulfilled, updateCreateTestAct)
+            .addCase(updateCurrentTest.fulfilled, updateTestAct)
+            .addCase(updateCurrentPreguntas.fulfilled, updateTestPreguntas);
     },
 });
 
