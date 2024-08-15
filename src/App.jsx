@@ -14,6 +14,7 @@ import { AllCategories } from './pages/categories/AllCategories'
 import { Category } from './pages/categories/Category'
 import { TestPage } from './pages/test/TestPage'
 import { DoTestPage } from './pages/test/DoTestPage'
+import { ResultTest } from './pages/test/ResultTest'
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
         <Route path='/create-test' element={<CreateTest />} />
         <Route path='/test/:id' element={<TestPage />} />
         <Route path='/do-test/:id' element={<DoTestPage />} />
+        <Route path='/result' element={<ResultTest />} />
 
         {/* Categories */}
         <Route path='/categories' element={<AllCategories />} />

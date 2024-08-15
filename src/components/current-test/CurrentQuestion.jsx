@@ -4,9 +4,17 @@ import { updateCurrentPreguntas } from "../../redux/test/reducers/testSlice"
 
 export default function CurrentQuestion({ question }) {
 
-    const [option, setOption] = useState(null)
+    const [option, setOption] = useState(question.answered || null)
+    const dispatch = useDispatch()
 
-    const changeOption = (evt) => setOption(evt.target.value)
+    const changeOption = (evt) => {
+        setOption(evt.target.value)
+        dispatch(updateCurrentPreguntas({ ...question, answered: evt.target.value }))
+    }
+
+    useEffect(() => {
+        setOption(question.answered || null)
+    }, [question])
 
 
     return (
