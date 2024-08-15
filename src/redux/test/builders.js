@@ -12,4 +12,13 @@ const updateTestPreguntas = (state, action) => {
     state.currentTest.preguntas[preguntaIndex] = action.payload
 }
 
-export { updateCreateTestAct, updateTestAct, updateTestPreguntas }
+const resetCurrentTestAct = (state) => {
+    state.currentTest = {
+        titulo: "",
+        descripcion: "",
+        categoria: "",
+        preguntas: []
+    }
+}
+
+export { updateCreateTestAct, updateTestAct, updateTestPreguntas, resetCurrentTestAct }

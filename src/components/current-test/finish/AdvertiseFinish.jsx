@@ -1,11 +1,14 @@
 import { useSelector } from "react-redux"
 import { selectPreguntasTest } from "../../../redux/test/reducers/selectors"
 import { useEffect, useRef, useState } from "react"
+import { getWrongAnswers } from "../../../utils/testResult"
+import { useNavigate } from "react-router-dom"
 
 export function AdvertiseFinish({ setIsOpen }) {
 
     const preguntas = useSelector(selectPreguntasTest)
     const [message, setMessage] = useState("")
+    const navigate = useNavigate()
     const modalRef = useRef(null)
 
     const showMessage = () => {
@@ -36,6 +39,9 @@ export function AdvertiseFinish({ setIsOpen }) {
     }, [modalRef])
 
     return (
-        <div ref={modalRef}>{message}</div>
+        <section ref={modalRef}>
+            <div>{message}</div>
+            <button onClick={() => navigate("/result")}>Terminar</button>
+        </section>
     )
 }

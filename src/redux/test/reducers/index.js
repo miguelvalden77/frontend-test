@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { updateCreateTest, updateCurrentPreguntas, updateCurrentTest } from "./testSlice";
-import { updateCreateTestAct, updateTestAct, updateTestPreguntas } from "../builders";
+import { resetCurrentTest, updateCreateTest, updateCurrentPreguntas, updateCurrentTest } from "./testSlice";
+import { resetCurrentTestAct, updateCreateTestAct, updateTestAct, updateTestPreguntas } from "../builders";
 
 const testSlice = createSlice({
     name: 'test',
@@ -27,7 +27,8 @@ const testSlice = createSlice({
         builder
             .addCase(updateCreateTest.fulfilled, updateCreateTestAct)
             .addCase(updateCurrentTest.fulfilled, updateTestAct)
-            .addCase(updateCurrentPreguntas.fulfilled, updateTestPreguntas);
+            .addCase(updateCurrentPreguntas.fulfilled, updateTestPreguntas)
+            .addCase(resetCurrentTest.fulfilled, resetCurrentTestAct);
     },
 });
 

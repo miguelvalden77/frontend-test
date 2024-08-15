@@ -35,4 +35,15 @@ const updateCurrentPreguntas = createAsyncThunk(
     }
 );
 
-export { updateCreateTest, updateCurrentTest, updateCurrentPreguntas }
+const resetCurrentTest = createAsyncThunk(
+    'test/resetTestPreguntas',
+    async (dataTest, { rejectWithValue }) => {
+        try {
+            return dataTest
+        } catch (error) {
+            return rejectWithValue(error.message);
+        }
+    }
+);
+
+export { updateCreateTest, updateCurrentTest, updateCurrentPreguntas, resetCurrentTest }
